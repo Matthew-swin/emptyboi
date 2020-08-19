@@ -44,17 +44,19 @@ namespace Tests
 
         /* 3. Converts a temperature from Celcius to Farenheit, rounded up to the nearest whole number
               CelciusToFarenheit(int celcius) : int
+
+              Alex edit: fixed erroneous test
         */
 
         [Theory]
         [InlineData(0, 32)]
         [InlineData(11, 52)]
-        [InlineData(-28, -19)]
+        [InlineData(-28, -18)]
         public void CelciusToFarenheitTheory(int value, int expected)
         {
             var ml = new GroupOneFunctions();
             var result = ml.CelciusToFarenheit(value);
-            Assert.Equal(result, expected);
+            Assert.Equal(expected, result);
         }
 
         /* 4. Checks a string and returns true if it is palindromic
@@ -62,6 +64,7 @@ namespace Tests
         */
 
         [Theory]
+        //you think your better then me issues? well... you are
         [InlineData("aba", true)]
         [InlineData("abba", true)]
         [InlineData("abcd", false)]
